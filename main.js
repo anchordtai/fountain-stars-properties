@@ -132,7 +132,11 @@ const footerHTML = `
 <div class="text-center py-4 border-t border-gray-700 mt-8">&copy; 2024 Fountain Stars Properties Limited. All rights reserved.</div>
 
 <!-- Map Placeholder -->
-<div class="w-full h-40 bg-gray-800 flex items-center justify-center text-gray-300">Map Placeholder</div>
+<div class="w-full h-64 mt-6 rounded-lg overflow-hidden shadow-lg">
+  <iframe
+    src="https://www.google.com/maps?q=Hse+1+block+1+Salis+Aviation+Estate+Opp+Aero+garden+estate+kuje+bridge+Abuja+Nigeria&output=embed"
+    width="100%" height="100%" style="border:0; min-height: 100%; min-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 `;
 
 // Property data for real images, captions, and descriptions
