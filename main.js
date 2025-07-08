@@ -395,8 +395,9 @@ const searchBarHTML = `
 
 // Update renderPropertiesPage for properties.html
 function renderPropertiesPage() {
-  const main = document.querySelector('main');
-  if (!main) return;
+  const propertiesList = document.getElementById('properties-list');
+  if (!propertiesList) return;
+  propertiesList.innerHTML = '';
   const grid = document.createElement('div');
   grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8';
   propertyData.forEach((p, i) => {
@@ -415,7 +416,7 @@ function renderPropertiesPage() {
     `;
     grid.appendChild(card);
   });
-  main.appendChild(grid);
+  propertiesList.appendChild(grid);
 }
 
 // Utility: Add success message to contact form
