@@ -14,7 +14,7 @@ const navbarHTML = `
           <a href="index.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-800 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
           <a href="about.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
           <a href="#properties" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
-          <a href="#team" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
+          <a href="team.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
           <a href="contact.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
         </div>
       </div>
@@ -32,7 +32,7 @@ const navbarHTML = `
       <a href="index.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-800 bg-blue-50 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
       <a href="about.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
       <a href="#properties" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
-      <a href="#team" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
+      <a href="team.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
       <a href="contact.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
     </div>
   </div>
