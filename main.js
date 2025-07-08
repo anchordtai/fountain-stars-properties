@@ -462,8 +462,52 @@ window.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   if (navbar) navbar.innerHTML = navbarHTML;
 
+  // Attach mobile menu event listener after navbar is injected
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
   const hero = document.getElementById('hero');
   if (hero) hero.innerHTML = heroHTML;
+
+  // Attach carousel event listeners after hero is injected
+  const carouselImgs = document.querySelectorAll('.carousel-img');
+  const carouselDots = document.querySelectorAll('.carousel-dot');
+  let currentSlide = 0;
+  function showSlide(idx) {
+    carouselImgs.forEach((img, i) => {
+      img.classList.toggle('opacity-0', i !== idx);
+      img.classList.toggle('opacity-100', i === idx);
+      // 3D effect: scale and rotate active image
+      if (i === idx) {
+        img.style.transform = 'scale(1.08) rotateY(-6deg)';
+        img.style.zIndex = 2;
+        img.style.filter = 'contrast(1.15) saturate(1.2)';
+      } else {
+        img.style.transform = 'scale(1) rotateY(0deg)';
+        img.style.zIndex = 1;
+        img.style.filter = 'contrast(1) saturate(1)';
+      }
+    });
+    carouselDots.forEach((dot, i) => {
+      dot.classList.toggle('opacity-70', i === idx);
+      dot.classList.toggle('opacity-50', i !== idx);
+    });
+    currentSlide = idx;
+  }
+  if (carouselDots.length && carouselImgs.length) {
+    carouselDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    let carouselInterval = setInterval(() => {
+      showSlide((currentSlide + 1) % carouselImgs.length);
+    }, 4000);
+    showSlide(0);
+  }
 
   const footer = document.getElementById('footer');
   if (footer) footer.innerHTML = footerHTML;
@@ -514,48 +558,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     input.addEventListener('input', filterProperties);
   }
-
-  // Mobile navbar toggle
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-
-  // Carousel functionality
-  const carouselImgs = document.querySelectorAll('.carousel-img');
-  const carouselDots = document.querySelectorAll('.carousel-dot');
-  let currentSlide = 0;
-  function showSlide(idx) {
-    carouselImgs.forEach((img, i) => {
-      img.classList.toggle('opacity-0', i !== idx);
-      img.classList.toggle('opacity-100', i === idx);
-      // 3D effect: scale and rotate active image
-      if (i === idx) {
-        img.style.transform = 'scale(1.08) rotateY(-6deg)';
-        img.style.zIndex = 2;
-        img.style.filter = 'contrast(1.15) saturate(1.2)';
-      } else {
-        img.style.transform = 'scale(1) rotateY(0deg)';
-        img.style.zIndex = 1;
-        img.style.filter = 'contrast(1) saturate(1)';
-      }
-    });
-    carouselDots.forEach((dot, i) => {
-      dot.classList.toggle('opacity-70', i === idx);
-      dot.classList.toggle('opacity-50', i !== idx);
-    });
-    currentSlide = idx;
-  }
-  carouselDots.forEach((dot, i) => {
-    dot.addEventListener('click', () => showSlide(i));
-  });
-  let carouselInterval = setInterval(() => {
-    showSlide((currentSlide + 1) % carouselImgs.length);
-  }, 4000);
-  showSlide(0);
 
   if (window.location.pathname.endsWith('properties.html')) {
     renderPropertiesPage();
