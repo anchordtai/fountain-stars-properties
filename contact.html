@@ -10,30 +10,52 @@
 <body class="bg-gray-50 text-gray-900">
   <header id="navbar"></header>
   <main class="max-w-4xl mx-auto py-16 px-4">
-    <h1 class="text-4xl font-bold mb-6 text-center">Contact Us</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <form class="bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-        <input type="text" placeholder="Your Name" class="border rounded px-4 py-2" required>
-        <input type="email" placeholder="Your Email" class="border rounded px-4 py-2" required>
-        <textarea placeholder="Your Message" class="border rounded px-4 py-2" rows="5" required></textarea>
-        <button type="submit" class="bg-blue-600 text-white rounded px-4 py-2 font-semibold hover:bg-blue-700 transition">Send Message</button>
+    <h1 class="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow">Contact Us</h1>
+    <div class="bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center">
+      <form class="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6 w-full md:w-1/2 border border-blue-100">
+        <div class="flex items-center gap-3">
+          <span class="text-blue-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+          <input type="text" placeholder="Your Name" class="flex-1 border-2 border-blue-100 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-blue-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0z"/></svg></span>
+          <input type="email" placeholder="Your Email" class="flex-1 border-2 border-blue-100 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-blue-500 mt-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <textarea placeholder="Your Message" class="flex-1 border-2 border-blue-100 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Send Message</button>
       </form>
-      <div class="flex flex-col gap-4 justify-center">
-        <div>
-          <h2 class="font-semibold text-lg">Office Address</h2>
-          <p>Hse 1 block 1 Salis Aviation Estate. Opp Aero Garden Estate. kuje bridge Abuja, Nigeria.</p>
+      <div class="flex flex-col gap-6 w-full md:w-1/2">
+        <div class="flex items-center gap-3">
+          <span class="text-blue-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 12.414a8 8 0 1 0-1.414 1.414l4.243 4.243a1 1 0 0 0 1.414-1.414z"/></svg></span>
+          <div>
+            <h2 class="font-semibold text-lg">Office Address</h2>
+            <p>Hse 1 block 1 Salis Aviation Estate. Opp Aero Garden Estate. kuje bridge Abuja, Nigeria.</p>
+          </div>
         </div>
-        <div>
-          <h2 class="font-semibold text-lg">Email</h2>
-          <p>info@fountainstars.com</p>
+        <div class="flex items-center gap-3">
+          <span class="text-blue-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0z"/></svg></span>
+          <div>
+            <h2 class="font-semibold text-lg">Email</h2>
+            <p>info@fountainstars.com</p>
+          </div>
         </div>
-        <div>
-          <h2 class="font-semibold text-lg">Phone</h2>
-          <p>+123 456 7890</p>
+        <div class="flex items-center gap-3">
+          <span class="text-blue-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"/></svg></span>
+          <div>
+            <h2 class="font-semibold text-lg">Phone</h2>
+            <p>+123 456 7890</p>
+          </div>
         </div>
-        <div>
-          <h2 class="font-semibold text-lg">Map</h2>
-          <div class="w-full h-40 bg-gray-200 rounded flex items-center justify-center">Map Placeholder</div>
+        <div class="flex flex-col gap-2">
+          <h2 class="font-semibold text-lg flex items-center gap-2"><span class="text-blue-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10.5a8.38 8.38 0 0 1-1.9.5 4.19 4.19 0 0 0 1.7-2.3 8.27 8.27 0 0 1-2.6 1 4.14 4.14 0 0 0-7 3.77A11.72 11.72 0 0 1 3.1 9.1a4.13 4.13 0 0 0 1.28 5.52 4.07 4.07 0 0 1-1.87-.52v.05a4.15 4.15 0 0 0 3.32 4.07 4.09 4.09 0 0 1-1.85.07 4.16 4.16 0 0 0 3.88 2.89A8.32 8.32 0 0 1 2 19.54a11.74 11.74 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.36-.01-.54A8.18 8.18 0 0 0 22 5.92a8.36 8.36 0 0 1-2.36.65A4.14 4.14 0 0 0 21 10.5z"/></svg></span>Map</h2>
+          <div class="w-full h-40 rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps?q=Hse+1+block+1+Salis+Aviation+Estate+Opp+Aero+garden+estate+kuje+bridge+Abuja+Nigeria&output=embed"
+              width="100%" height="100%" style="border:0; min-height: 100%; min-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
