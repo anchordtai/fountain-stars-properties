@@ -10,12 +10,18 @@ const navbarHTML = `
           <span class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide font-sans">Fountain Stars</span>
           <span class="text-sm md:text-base font-semibold text-blue-400 italic -mt-1">Properties Limited</span>
         </a>
-        <div class="hidden md:ml-6 md:flex md:space-x-8">
+        <div class="hidden md:ml-6 md:flex md:space-x-8 items-center w-full justify-end">
           <a href="index.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-800 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
           <a href="about.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
           <a href="#properties" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
           <a href="team.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
           <a href="contact.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
+          <form id="navbar-search-form" class="ml-6 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-64 max-w-xs focus-within:ring-2 focus-within:ring-blue-400 transition">
+            <input id="navbar-search" type="text" placeholder="Search properties..." class="flex-1 px-3 py-1 bg-transparent outline-none text-sm text-blue-900" />
+            <button type="submit" class="text-blue-500 hover:text-blue-700 p-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+          </form>
         </div>
       </div>
       <div class="-mr-2 flex items-center md:hidden">
@@ -34,6 +40,12 @@ const navbarHTML = `
       <a href="#properties" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
       <a href="team.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
       <a href="contact.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
+      <form id="navbar-search-form-mobile" class="mt-4 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-full focus-within:ring-2 focus-within:ring-blue-400 transition">
+        <input id="navbar-search-mobile" type="text" placeholder="Search properties..." class="flex-1 px-3 py-1 bg-transparent outline-none text-sm text-blue-900" />
+        <button type="submit" class="text-blue-500 hover:text-blue-700 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </form>
     </div>
   </div>
 </nav>
@@ -143,63 +155,103 @@ const footerHTML = `
 const propertyData = [
   {
     img: 'images/property1.jpeg',
+    images: ['images/property1.jpeg', 'images/property2.jpeg', 'images/property3.jpeg'],
     icon: '🏡',
     title: 'Elegant Family Home',
-    desc: 'A spacious, sunlit home perfect for families, with a lush garden and modern amenities.'
+    desc: 'A spacious, sunlit home perfect for families, with a lush garden and modern amenities.',
+    price: '₦120,000,000',
+    location: 'Idu, Abuja',
+    features: ['4 Bedrooms', '3 Bathrooms', '2 Garages', 'Garden', 'Modern Kitchen']
   },
   {
     img: 'images/property2.jpeg',
+    images: ['images/property2.jpeg', 'images/property3.jpeg', 'images/property4.jpeg'],
     icon: '🏙️',
     title: 'City View Apartment',
-    desc: 'Enjoy breathtaking city views from this stylish, centrally located apartment.'
+    desc: 'Enjoy breathtaking city views from this stylish, centrally located apartment.',
+    price: '₦85,000,000',
+    location: 'Central Area, Abuja',
+    features: ['2 Bedrooms', '2 Bathrooms', 'Balcony', 'City View', 'Gym Access']
   },
   {
     img: 'images/property3.jpeg',
+    images: ['images/property3.jpeg', 'images/property4.jpeg', 'images/property5.jpeg'],
     icon: '🌴',
     title: 'Resort-Style Villa',
-    desc: 'A luxurious villa with a private pool, palm trees, and serene surroundings.'
+    desc: 'A luxurious villa with a private pool, palm trees, and serene surroundings.',
+    price: '₦500,000,000',
+    location: 'Lugbe, Abuja',
+    features: ['5 Bedrooms', '4 Bathrooms', 'Pool', 'Garden', 'Gym']
   },
   {
     img: 'images/property4.jpeg',
+    images: ['images/property4.jpeg', 'images/property5.jpeg', 'images/property1.jpeg'],
     icon: '🏢',
     title: 'Modern Office Space',
-    desc: 'A sleek, fully-equipped office space in a prime business district.'
+    desc: 'A sleek, fully-equipped office space in a prime business district.',
+    price: '₦150,000,000',
+    location: 'Maitama 3, Abuja',
+    features: ['1000 Sq Ft', 'Fully Furnished', 'High Ceilings', 'Conference Room', 'Parking']
   },
   {
     img: 'images/property5.jpeg',
+    images: ['images/property5.jpeg', 'images/property1.jpeg', 'images/property2.jpeg'],
     icon: '🏘️',
     title: 'Gated Community House',
-    desc: 'Secure and peaceful living in a friendly gated community.'
+    desc: 'Secure and peaceful living in a friendly gated community.',
+    price: '₦200,000,000',
+    location: 'Guzape, Abuja',
+    features: ['3 Bedrooms', '2 Bathrooms', 'Gated', 'Security', 'Community Center']
   },
   {
     img: 'images/propert6.jpeg',
+    images: ['images/propert6.jpeg', 'images/property7.jpeg', 'images/property8.jpeg'],
     icon: '🌅',
     title: 'Sunset Penthouse',
-    desc: 'A penthouse with panoramic sunset views and luxury finishes.'
+    desc: 'A penthouse with panoramic sunset views and luxury finishes.',
+    price: '₦350,000,000',
+    location: 'Kyami, Abuja',
+    features: ['4 Bedrooms', '4 Bathrooms', 'Panoramic Views', 'Private Terrace', 'Gym']
   },
   {
     img: 'images/property7.jpeg',
+    images: ['images/property7.jpeg', 'images/propert8.jpeg', 'images/property9.jpeg'],
     icon: '🏞️',
     title: 'Lakeside Retreat',
-    desc: 'A tranquil retreat by the lake, perfect for relaxation and nature lovers.'
+    desc: 'A tranquil retreat by the lake, perfect for relaxation and nature lovers.',
+    price: '₦180,000,000',
+    location: 'Idu, Abuja',
+    features: ['3 Bedrooms', '2 Bathrooms', 'Lake View', 'Garden', 'Private Dock']
   },
   {
     img: 'images/propert8.jpeg',
+    images: ['images/propert8.jpeg', 'images/property9.jpeg', 'images/propert10.jpeg'],
     icon: '🏰',
     title: 'Classic Mansion',
-    desc: 'A grand mansion with timeless architecture and expansive grounds.'
+    desc: 'A grand mansion with timeless architecture and expansive grounds.',
+    price: '₦480,000,000',
+    location: 'Maitama 3, Abuja',
+    features: ['10 Bedrooms', '10 Bathrooms', 'Gym', 'Pool', 'Cinema Room']
   },
   {
     img: 'images/property9.jpeg',
+    images: ['images/property9.jpeg', 'images/propert10.jpeg', 'images/property1.jpeg'],
     icon: '🌳',
     title: 'Eco-Friendly Home',
-    desc: 'A sustainable home with green features and beautiful landscaping.'
+    desc: 'A sustainable home with green features and beautiful landscaping.',
+    price: '₦95,000,000',
+    location: 'Guzape, Abuja',
+    features: ['3 Bedrooms', '2 Bathrooms', 'Solar Panels', 'Rainwater Harvesting', 'Green Roof']
   },
   {
     img: 'images/propert10.jpeg',
+    images: ['images/propert10.jpeg', 'images/property1.jpeg', 'images/property2.jpeg'],
     icon: '🏠',
     title: 'Cozy Starter House',
-    desc: 'A charming, affordable home ideal for first-time buyers.'
+    desc: 'A charming, affordable home ideal for first-time buyers.',
+    price: '₦50,000,000',
+    location: 'Idu, Abuja',
+    features: ['2 Bedrooms', '1 Bathroom', 'Affordable', 'Easy Maintenance', 'Good Location']
   }
 ];
 
@@ -212,7 +264,7 @@ function renderPropertiesGrid(filteredData) {
       <h2 class="text-3xl font-bold text-center mb-10">Featured Properties</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         ${filteredData.map((p, i) => `
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100 cursor-pointer" data-property-index="${i}">
             <div class="relative">
               <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
               <span class="absolute top-3 left-3 text-3xl">${p.icon}</span>
@@ -220,13 +272,26 @@ function renderPropertiesGrid(filteredData) {
             <div class="p-4">
               <h3 class="text-xl font-bold mb-1 flex items-center gap-2">${p.title}</h3>
               <p class="text-gray-600 mb-4 text-sm">${p.desc}</p>
-              <a href="properties.html" class="${modernButtonClass}">Read More</a>
+              <div class="text-blue-600 font-semibold mb-2">${p.price || ''}</div>
+              <div class="text-xs text-gray-500 mb-2">${p.location || ''}</div>
+              <button class="${modernButtonClass} w-full view-details-btn" data-property-index="${i}">View Details</button>
             </div>
           </div>
         `).join('')}
       </div>
     </div>
   `;
+  // Add click handlers for 'View Details' buttons only
+  setTimeout(() => {
+    const buttons = properties.querySelectorAll('.view-details-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.getAttribute('data-property-index'));
+        openPropertyModal(filteredData[idx]);
+      });
+    });
+  }, 0);
 }
 
 // Team Section HTML
@@ -406,7 +471,8 @@ function renderPropertiesPage() {
   grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8';
   propertyData.forEach((p, i) => {
     const card = document.createElement('div');
-    card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100';
+    card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100 cursor-pointer';
+    card.setAttribute('data-property-index', i);
     card.innerHTML = `
       <div class="relative">
         <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
@@ -415,12 +481,25 @@ function renderPropertiesPage() {
       <div class="p-4">
         <h3 class="text-xl font-bold mb-1 flex items-center gap-2">${p.title}</h3>
         <p class="text-gray-600 mb-4 text-sm">${p.desc}</p>
-        <a href="property-${i+1}.html" class="${modernButtonClass}">Read More</a>
+        <div class="text-blue-600 font-semibold mb-2">${p.price || ''}</div>
+        <div class="text-xs text-gray-500 mb-2">${p.location || ''}</div>
+        <button class="${modernButtonClass} w-full view-details-btn" data-property-index="${i}">View Details</button>
       </div>
     `;
     grid.appendChild(card);
   });
   propertiesList.appendChild(grid);
+  // Add click handlers for 'View Details' buttons only
+  setTimeout(() => {
+    const buttons = propertiesList.querySelectorAll('.view-details-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.getAttribute('data-property-index'));
+        openPropertyModal(propertyData[idx]);
+      });
+    });
+  }, 0);
 }
 
 // Utility: Add success message to contact form
@@ -462,8 +541,60 @@ function addAdvancedAnimations() {
   }
 }
 
-// Inject sections into DOM
+// Utility to render property details modal
+function openPropertyModal(property) {
+  const modal = document.getElementById('property-modal');
+  const content = document.getElementById('property-modal-content');
+  if (!modal || !content) return;
+  // Carousel for images
+  let carousel = '';
+  if (property.images && property.images.length > 1) {
+    carousel = `
+      <div class="relative mb-4">
+        <div class="flex overflow-x-auto gap-2 snap-x">
+          ${property.images.map(img => `<img src="${img}" class="h-48 w-full object-cover rounded-xl snap-center shadow" alt="${property.title}">`).join('')}
+        </div>
+      </div>
+    `;
+  } else {
+    carousel = `<img src="${property.img}" class="h-48 w-full object-cover rounded-xl mb-4 shadow" alt="${property.title}">`;
+  }
+  // Features list
+  const features = property.features ? `<ul class="flex flex-wrap gap-2 mb-4">${property.features.map(f => `<li class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">${f}</li>`).join('')}</ul>` : '';
+  // Map embed
+  const map = property.location ? `<div class="w-full h-40 rounded-lg overflow-hidden shadow mb-4"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(property.location + ', Abuja, Nigeria')}&output=embed" width="100%" height="100%" style="border:0; min-height: 100%; min-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>` : '';
+  content.innerHTML = `
+    ${carousel}
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl">${property.icon}</span>
+      <h2 class="text-2xl font-bold text-blue-700">${property.title}</h2>
+    </div>
+    <div class="text-lg font-semibold text-blue-500 mb-2">${property.price || ''}</div>
+    <div class="text-gray-600 mb-4">${property.desc}</div>
+    <div class="text-sm text-gray-500 mb-2"><span class="font-semibold">Location:</span> ${property.location || ''}</div>
+    ${features}
+    ${map}
+    <button class="mt-4 w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Contact about this property</button>
+  `;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+// Close modal logic
 window.addEventListener('DOMContentLoaded', () => {
+  // Inject modal container at the very start
+  if (!document.getElementById('property-modal')) {
+    const modalDiv = document.createElement('div');
+    modalDiv.id = 'property-modal';
+    modalDiv.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-black/50';
+    modalDiv.innerHTML = `
+      <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-6 relative animate-fade-in-up">
+        <button id="close-property-modal" class="absolute top-4 right-4 text-gray-400 hover:text-blue-600 text-2xl font-bold">&times;</button>
+        <div id="property-modal-content"></div>
+      </div>
+    `;
+    document.body.appendChild(modalDiv);
+  }
+
   const navbar = document.getElementById('navbar');
   if (navbar) navbar.innerHTML = navbarHTML;
 
@@ -573,29 +704,89 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   addAdvancedAnimations();
 
-  // Search bar filtering for landing page
-  // const searchBar = document.getElementById('search-bar'); // This line is removed as per the edit hint
-  // const propertiesSection = document.getElementById('properties'); // This line is removed as per the edit hint
-  // if (searchBar && propertiesSection) { // This line is removed as per the edit hint
-  //   // Initial render // This line is removed as per the edit hint
-  //   renderPropertiesGrid(propertyData.slice(0, 8)); // This line is removed as per the edit hint
-  //   // Add event listeners // This line is removed as per the edit hint
-  //   const form = searchBar.querySelector('form'); // This line is removed as per the edit hint
-  //   const input = searchBar.querySelector('input[type="text"]'); // This line is removed as per the edit hint
-  //   function filterProperties() { // This line is removed as per the edit hint
-  //     const q = input.value.trim().toLowerCase(); // This line is removed as per the edit hint
-  //     const filtered = propertyData.filter(p => // This line is removed as per the edit hint
-  //       p.title.toLowerCase().includes(q) || // This line is removed as per the edit hint
-  //       p.desc.toLowerCase().includes(q) // This line is removed as per the edit hint
-  //     ).slice(0, 8); // This line is removed as per the edit hint
-  //     renderPropertiesGrid(filtered); // This line is removed as per the edit hint
-  //   } // This line is removed as per the edit hint
-  //   form.addEventListener('submit', e => { // This line is removed as per the edit hint
-  //     e.preventDefault(); // This line is removed as per the edit hint
-  //     filterProperties(); // This line is removed as per the edit hint
-  //   }); // This line is removed as per the edit hint
-  //   input.addEventListener('input', filterProperties); // This line is removed as per the edit hint
-  // } // This line is removed as per the edit hint
+  // Navbar search bar filtering for properties
+  function filterPropertiesByNavbarSearch(query) {
+    const q = query.trim().toLowerCase();
+    const filtered = propertyData.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q)
+    );
+    // On landing page, show up to 8
+    if (document.getElementById('properties')) {
+      renderPropertiesGrid(filtered.slice(0, 8));
+    }
+    // On properties page, show all
+    if (document.getElementById('properties-list')) {
+      const propertiesList = document.getElementById('properties-list');
+      propertiesList.innerHTML = '';
+      const grid = document.createElement('div');
+      grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8';
+      filtered.forEach((p, i) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100';
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+            <span class="absolute top-3 left-3 text-3xl">${p.icon}</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-1 flex items-center gap-2">${p.title}</h3>
+            <p class="text-gray-600 mb-4 text-sm">${p.desc}</p>
+            <a href="property-${i+1}.html" class="${modernButtonClass}">Read More</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      propertiesList.appendChild(grid);
+    }
+  }
+
+  // Desktop navbar search
+  const navbarSearch = document.getElementById('navbar-search');
+  if (navbarSearch) {
+    navbarSearch.addEventListener('input', (e) => {
+      filterPropertiesByNavbarSearch(e.target.value);
+    });
+  }
+  const navbarSearchForm = document.getElementById('navbar-search-form');
+  if (navbarSearchForm) {
+    navbarSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (navbarSearch) filterPropertiesByNavbarSearch(navbarSearch.value);
+    });
+  }
+  // Mobile navbar search
+  const navbarSearchMobile = document.getElementById('navbar-search-mobile');
+  if (navbarSearchMobile) {
+    navbarSearchMobile.addEventListener('input', (e) => {
+      filterPropertiesByNavbarSearch(e.target.value);
+    });
+  }
+  const navbarSearchFormMobile = document.getElementById('navbar-search-form-mobile');
+  if (navbarSearchFormMobile) {
+    navbarSearchFormMobile.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (navbarSearchMobile) filterPropertiesByNavbarSearch(navbarSearchMobile.value);
+    });
+  }
+
+  // Inject modal container into DOM
+  // This block is now moved to the very top of DOMContentLoaded
+
+  document.body.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'close-property-modal') {
+      const modal = document.getElementById('property-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+    // Close modal when clicking outside modal content
+    if (e.target && e.target.id === 'property-modal') {
+      e.target.classList.add('hidden');
+      e.target.classList.remove('flex');
+    }
+  });
 });
 
 // Tailwind custom animations (inject into <head> if needed)
