@@ -23,7 +23,7 @@
         </div>
         <div class="flex items-start gap-3">
           <span class="text-blue-500 mt-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <textarea placeholder="Your Message" class="flex-1 border-2 border-blue-100 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" rows="5" required></textarea>
+          <textarea id="contact-message" placeholder="Your Message" class="flex-1 border-2 border-blue-100 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400" rows="5" required></textarea>
         </div>
         <button type="submit" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Send Message</button>
       </form>
@@ -61,5 +61,18 @@
     </div>
   </main>
   <footer id="footer" class="bg-gray-900 text-white"></footer>
+  <script>
+    // Pre-fill message if property query param is present
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const property = params.get('property');
+      if (property) {
+        const textarea = document.getElementById('contact-message');
+        if (textarea) {
+          textarea.value = `I am interested in: ${property}`;
+        }
+      }
+    });
+  </script>
 </body>
 </html> 

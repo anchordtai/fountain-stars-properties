@@ -574,10 +574,20 @@ function openPropertyModal(property) {
     <div class="text-sm text-gray-500 mb-2"><span class="font-semibold">Location:</span> ${property.location || ''}</div>
     ${features}
     ${map}
-    <button class="mt-4 w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Contact about this property</button>
+    <button id="contact-property-btn" class="mt-4 w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Contact about this property</button>
   `;
   modal.classList.remove('hidden');
   modal.classList.add('flex');
+  // Add click handler for contact button
+  setTimeout(() => {
+    const contactBtn = document.getElementById('contact-property-btn');
+    if (contactBtn) {
+      contactBtn.addEventListener('click', () => {
+        const url = `contact.html?property=${encodeURIComponent(property.title)}`;
+        window.open(url, '_blank');
+      });
+    }
+  }, 0);
 }
 // Close modal logic
 window.addEventListener('DOMContentLoaded', () => {
