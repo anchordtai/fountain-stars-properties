@@ -74,7 +74,7 @@ const heroHTML = `
   <div class="relative z-10 max-w-2xl mx-auto text-center text-white px-6 py-12">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">Find Your Dream Home</h1>
     <p class="text-lg md:text-xl mb-6 font-medium drop-shadow">Discover luxury properties, modern apartments, and investment opportunities with Fountain Stars Properties Limited.</p>
-    <a href="#properties" class="${modernButtonClass} animate-bounce">Browse Properties</a>
+    <a href="properties.html" class="${modernButtonClass} animate-bounce">Browse Properties</a>
   </div>
 </div>
 `;
@@ -504,11 +504,43 @@ function renderPropertiesPage() {
 
 // Utility: Add success message to contact form
 function enhanceContactForm() {
-  const form = document.querySelector('form');
+  const form = document.getElementById('contact-form');
   if (!form) return;
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    // reCAPTCHA validation
+    const recaptcha = window.grecaptcha;
+    if (!recaptcha || !recaptcha.getResponse || !recaptcha.getResponse()) {
+      if (!document.getElementById('recaptcha-error')) {
+        const err = document.createElement('div');
+        err.id = 'recaptcha-error';
+        err.className = 'mt-2 p-2 bg-red-100 text-red-800 rounded shadow text-center';
+        err.textContent = 'Please complete the reCAPTCHA.';
+        form.appendChild(err);
+        setTimeout(() => err.remove(), 4000);
+      }
+      return;
+    }
+    // Validate required fields
+    const name = form.elements['name'].value.trim();
+    const email = form.elements['email'].value.trim();
+    const phone = form.elements['phone'].value.trim();
+    const address = form.elements['address'].value.trim();
+    const state = form.elements['state'].value.trim();
+    const message = form.elements['message'].value.trim();
+    if (!name || !email || !phone || !address || !state || !message) {
+      if (!document.getElementById('form-error')) {
+        const err = document.createElement('div');
+        err.id = 'form-error';
+        err.className = 'mt-2 p-2 bg-red-100 text-red-800 rounded shadow text-center';
+        err.textContent = 'Please fill in all required fields.';
+        form.appendChild(err);
+        setTimeout(() => err.remove(), 4000);
+      }
+      return;
+    }
     form.reset();
+    window.grecaptcha.reset();
     if (!document.getElementById('success-msg')) {
       const msg = document.createElement('div');
       msg.id = 'success-msg';
