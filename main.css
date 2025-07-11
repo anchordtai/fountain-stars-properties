@@ -1,0 +1,8 @@
+.sharp-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* For Safari and Chrome */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+} 

@@ -56,16 +56,14 @@ const heroHTML = `
 <div class="relative bg-gradient-to-r from-blue-900 via-blue-700 to-blue-400 min-h-[480px] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
     <div id="carousel" class="relative w-full h-[420px] rounded-3xl shadow-2xl overflow-hidden mx-auto perspective-3d">
-      <img src="images/property1.jpeg" class="carousel-img w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Elegant Family Home">
-      <img src="images/property2.jpeg" class="carousel-img w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="City View Apartment">
-      <img src="images/property3.jpeg" class="carousel-img w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Resort-Style Villa">
-      <img src="images/property4.jpeg" class="carousel-img w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Modern Office Space">
-      <img src="images/property5.jpeg" class="carousel-img w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Gated Community House">
+      <img src="images/property13.png" class="carousel-img sharp-image w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Elegant Family Home">
+      <img src="images/property14.png" class="carousel-img sharp-image w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="City View Apartment">
+      <img src="images/property15.png" class="carousel-img sharp-image w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Resort-Style Villa">
+      <img src="images/image12.png" class="carousel-img sharp-image w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-all duration-700 border-4 border-white shadow-2xl carousel-3d" alt="Modern Office Space">
       <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-700/40 to-transparent"></div>
     </div>
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
       <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-70"></button>
-      <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
       <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
       <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
       <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
@@ -660,16 +658,10 @@ window.addEventListener('DOMContentLoaded', () => {
     carouselImgs.forEach((img, i) => {
       img.classList.toggle('opacity-0', i !== idx);
       img.classList.toggle('opacity-100', i === idx);
-      // 3D effect: scale and rotate active image
-      if (i === idx) {
-        img.style.transform = 'scale(1.08) rotateY(-6deg)';
-        img.style.zIndex = 2;
-        img.style.filter = 'contrast(1.15) saturate(1.2)';
-      } else {
-        img.style.transform = 'scale(1) rotateY(0deg)';
-        img.style.zIndex = 1;
-        img.style.filter = 'contrast(1) saturate(1)';
-      }
+      // Remove scale and rotation for sharpness
+      img.style.transform = 'none';
+      img.style.zIndex = i === idx ? 2 : 1;
+      img.style.filter = i === idx ? 'contrast(1.15) saturate(1.2)' : 'contrast(1) saturate(1)';
     });
     carouselDots.forEach((dot, i) => {
       dot.classList.toggle('opacity-70', i === idx);
