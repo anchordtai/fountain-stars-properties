@@ -152,8 +152,8 @@ const footerHTML = `
 // Property data for real images, captions, and descriptions
 const propertyData = [
   {
-    img: 'images/property1.jpeg',
-    images: ['images/property1.jpeg', 'images/property2.jpeg', 'images/property3.jpeg'],
+    img: 'images/property13.png',
+    images: ['images/property13.png', 'images/property14.png', 'images/property15.png'],
     icon: '🏡',
     title: 'Elegant Family Home',
     desc: 'A spacious, sunlit home perfect for families, with a lush garden and modern amenities.',
@@ -162,8 +162,8 @@ const propertyData = [
     features: ['4 Bedrooms', '3 Bathrooms', '2 Garages', 'Garden', 'Modern Kitchen']
   },
   {
-    img: 'images/property2.jpeg',
-    images: ['images/property2.jpeg', 'images/property3.jpeg', 'images/property4.jpeg'],
+    img: 'images/property14.png',
+    images: ['images/property14.png', 'images/property15.png', 'images/image12.png'],
     icon: '🏙️',
     title: 'City View Apartment',
     desc: 'Enjoy breathtaking city views from this stylish, centrally located apartment.',
@@ -172,8 +172,8 @@ const propertyData = [
     features: ['2 Bedrooms', '2 Bathrooms', 'Balcony', 'City View', 'Gym Access']
   },
   {
-    img: 'images/property3.jpeg',
-    images: ['images/property3.jpeg', 'images/property4.jpeg', 'images/property5.jpeg'],
+    img: 'images/property15.png',
+    images: ['images/property15.png', 'images/image12.png', 'images/property13.png'],
     icon: '🌴',
     title: 'Resort-Style Villa',
     desc: 'A luxurious villa with a private pool, palm trees, and serene surroundings.',
@@ -182,8 +182,8 @@ const propertyData = [
     features: ['5 Bedrooms', '4 Bathrooms', 'Pool', 'Garden', 'Gym']
   },
   {
-    img: 'images/property4.jpeg',
-    images: ['images/property4.jpeg', 'images/property5.jpeg', 'images/property1.jpeg'],
+    img: 'images/image12.png',
+    images: ['images/image12.png', 'images/property13.png', 'images/property14.png'],
     icon: '🏢',
     title: 'Modern Office Space',
     desc: 'A sleek, fully-equipped office space in a prime business district.',
@@ -192,8 +192,8 @@ const propertyData = [
     features: ['1000 Sq Ft', 'Fully Furnished', 'High Ceilings', 'Conference Room', 'Parking']
   },
   {
-    img: 'images/property5.jpeg',
-    images: ['images/property5.jpeg', 'images/property1.jpeg', 'images/property2.jpeg'],
+    img: '',
+    images: ['', '', ''],
     icon: '🏘️',
     title: 'Gated Community House',
     desc: 'Secure and peaceful living in a friendly gated community.',
@@ -593,7 +593,18 @@ function openPropertyModal(property) {
   const features = property.features ? `<ul class="flex flex-wrap gap-2 mb-4">${property.features.map(f => `<li class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">${f}</li>`).join('')}</ul>` : '';
   // Map embed
   const map = property.location ? `<div class="w-full h-40 rounded-lg overflow-hidden shadow mb-4"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(property.location + ', Abuja, Nigeria')}&output=embed" width="100%" height="100%" style="border:0; min-height: 100%; min-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>` : '';
+  // Social media icons
+  const socials = `
+    <div class="flex gap-4 mt-4 justify-center">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-blue-600 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0z"/></svg></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-pink-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.612.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-7.612 0-5.923-.013-6.332-.072-7.612-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0z"/></svg></a>
+      <a href="https://wa.me/2348012345678" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.519-5.688-1.515L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.651-1.033-5.138-2.909-7.016C16.148 3.9 13.661 2.867 11.01 2.868c-5.448 0-9.886 4.434-9.889 9.884-.001 1.885.502 3.733 1.463 5.354l-.982 3.587 3.052-.999zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
+    </div>
+  `;
+  // Go back icon
+  const goBack = `<button id="go-back-modal" class="absolute top-4 left-4 text-blue-600 hover:text-blue-800 text-3xl font-bold z-20" title="Go Back" aria-label="Go Back"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>`;
   content.innerHTML = `
+    ${goBack}
     ${carousel}
     <div class="flex items-center gap-2 mb-2">
       <span class="text-2xl">${property.icon}</span>
@@ -605,6 +616,7 @@ function openPropertyModal(property) {
     ${features}
     ${map}
     <button id="contact-property-btn" class="mt-4 w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full px-6 py-3 font-bold shadow-lg hover:from-blue-700 hover:to-blue-500 transition">Contact about this property</button>
+    ${socials}
   `;
   modal.classList.remove('hidden');
   modal.classList.add('flex');
@@ -615,6 +627,18 @@ function openPropertyModal(property) {
       contactBtn.addEventListener('click', () => {
         const url = `contact.html?property=${encodeURIComponent(property.title)}`;
         window.open(url, '_blank');
+      });
+    }
+    // Go back icon handler
+    const goBackBtn = document.getElementById('go-back-modal');
+    if (goBackBtn) {
+      goBackBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (window.location.pathname.endsWith('properties.html')) {
+          const grid = document.getElementById('properties-list');
+          if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     }
   }, 0);
@@ -821,6 +845,59 @@ window.addEventListener('DOMContentLoaded', () => {
       e.target.classList.remove('flex');
     }
   });
+});
+
+// Floating chat bot widget
+window.addEventListener('DOMContentLoaded', () => {
+  // Add floating chat bot
+  if (!document.getElementById('chatbot-btn')) {
+    const chatBtn = document.createElement('button');
+    chatBtn.id = 'chatbot-btn';
+    chatBtn.className = 'fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-full shadow-lg p-4 flex items-center justify-center hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2';
+    chatBtn.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2m2-4h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>';
+    document.body.appendChild(chatBtn);
+    // Chat window
+    const chatWindow = document.createElement('div');
+    chatWindow.id = 'chatbot-window';
+    chatWindow.className = 'fixed bottom-24 right-6 z-50 bg-white rounded-2xl shadow-2xl w-80 max-w-xs p-4 hidden flex-col';
+    chatWindow.innerHTML = `
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-bold text-blue-700">Fountain Stars ChatBot</span>
+        <button id="close-chatbot" class="text-gray-400 hover:text-blue-600 text-2xl font-bold">&times;</button>
+      </div>
+      <div id="chatbot-messages" class="h-40 overflow-y-auto mb-2 text-sm"></div>
+      <form id="chatbot-form" class="flex gap-2">
+        <input type="text" id="chatbot-input" class="flex-1 border rounded px-2 py-1" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit" class="bg-blue-600 text-white rounded px-3 py-1 font-bold">Send</button>
+      </form>
+    `;
+    document.body.appendChild(chatWindow);
+    chatBtn.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+      if (!chatWindow.classList.contains('hidden')) {
+        document.getElementById('chatbot-input').focus();
+      }
+    });
+    document.getElementById('close-chatbot').addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+    // Simple chat logic
+    const messagesDiv = document.getElementById('chatbot-messages');
+    const form = document.getElementById('chatbot-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = document.getElementById('chatbot-input');
+      const msg = input.value.trim();
+      if (!msg) return;
+      messagesDiv.innerHTML += `<div class='mb-1'><span class='font-semibold text-blue-600'>You:</span> ${msg}</div>`;
+      input.value = '';
+      setTimeout(() => {
+        messagesDiv.innerHTML += `<div class='mb-1'><span class='font-semibold text-green-600'>Bot:</span> Thank you for your message! We'll get back to you soon.</div>`;
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      }, 600);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    });
+  }
 });
 
 // Tailwind custom animations (inject into <head> if needed)
