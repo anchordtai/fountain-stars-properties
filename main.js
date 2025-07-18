@@ -109,7 +109,7 @@ const footerHTML = `
     <h3 class="text-xl font-bold mb-2">Fountain Stars Properties Ltd</h3>
     <p>Hse 1 block 1 Salis Aviation Estate. Opp Aero garden estate. kuje bridge Abuja.</p>
     <p>Email: info@fountainstars.com</p>
-    <p>Phone: +123 456 7890</p>
+    <p>Phone: +2347010488715, +2348101208087, +2348069030714</p>
   </div>
   <div>
     <h4 class="font-semibold mb-2">Quick Links</h4>
@@ -303,11 +303,21 @@ const teamHTML = `
       <p class="text-blue-600">Chief Executive Officer</p>
     </div>
     <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
+      <img src="images/whiteman.jpg" alt="Engr Ghulum Muhammad Baloch" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
+      <h4 class="font-semibold text-lg text-center">Engr Ghulum Muhammad Baloch</h4>
+      <p class="text-blue-600">Head of Engineering Dept.</p>
+    </div>
+    <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
+      <img src="images/eze.jpg" alt="Engr Sunny Eze" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
+      <h4 class="font-semibold text-lg text-center">Engr Sunny Eze</h4>
+      <p class="text-blue-600">Procurement and site manager</p>
+    </div>
+    <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
       <img src="images/marketing-manager.png" alt="Marketing Manager" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
       <h4 class="font-semibold text-lg">Marketing Manager</h4>
       <p class="text-blue-600">Marketing Manager</p>
     </div>
-    ${[3,4,5,6,7,8].map(i => `
+    ${[3,4,5,6].map(i => `
       <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
         <img src="https://randomuser.me/api/portraits/men/${i+10}.jpg" alt="Team Member ${i}" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
         <h4 class="font-semibold text-lg">Member Name ${i}</h4>
@@ -598,7 +608,7 @@ function openPropertyModal(property) {
     <div class="flex gap-4 mt-4 justify-center">
       <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-blue-600 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0z"/></svg></a>
       <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-pink-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.612.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-7.612 0-5.923-.013-6.332-.072-7.612-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0z"/></svg></a>
-      <a href="https://wa.me/2348012345678" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.519-5.688-1.515L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.651-1.033-5.138-2.909-7.016C16.148 3.9 13.661 2.867 11.01 2.868c-5.448 0-9.886 4.434-9.889 9.884-.001 1.885.502 3.733 1.463 5.354l-.982 3.587 3.052-.999zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
+      <a href="https://wa.me/2347010488715" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.519-5.688-1.515L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.651-1.033-5.138-2.909-7.016C16.148 3.9 13.661 2.867 11.01 2.868c-5.448 0-9.886 4.434-9.889 9.884-.001 1.885.502 3.733 1.463 5.354l-.982 3.587 3.052-.999zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
     </div>
   `;
   // Go back icon
