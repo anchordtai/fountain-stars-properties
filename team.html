@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Team | Fountain Stars Properties Limited</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="main.js"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <script defer src="main.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <header id="navbar"></header>
@@ -15,56 +15,80 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       <!-- Team Member 1 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="images/ceo.png" alt="Hon. Dr Helen Taiwo Adebakin" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="images/ceo.webp" type="image/webp">
+          <img src="images/ceo.png" alt="Hon. Dr Helen Taiwo Adebakin" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Hon. Dr Helen Taiwo Adebakin</h3>
         <p class="text-blue-500 font-semibold mb-2">Chief Executive Officer</p>
         <p class="text-gray-600 text-center text-sm">Visionary leader with over 20 years of experience in real estate and property management. Committed to excellence and client satisfaction.</p>
       </div>
       <!-- Team Member 2 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="images/whiteman.jpg" alt="Engr Ghulum Muhammad Baloch" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="images/whiteman.webp" type="image/webp">
+          <img src="images/whiteman.jpg" alt="Engr Ghulum Muhammad Baloch" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Engr Ghulum Muhammad Baloch</h3>
         <p class="text-blue-500 font-semibold mb-2">Head of Engineering Dept.</p>
         <p class="text-gray-600 text-center text-sm">Experienced engineering leader overseeing all technical and construction projects for the company.</p>
       </div>
       <!-- Team Member 3 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="images/eze.jpg" alt="Engr Sunny Eze" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="images/eze.webp" type="image/webp">
+          <img src="images/eze.jpg" alt="Engr Sunny Eze" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Engr Sunny Eze</h3>
         <p class="text-blue-500 font-semibold mb-2">Procurement and site manager</p>
         <p class="text-gray-600 text-center text-sm">Expert in procurement and site management, ensuring timely delivery and quality on all projects.</p>
       </div>
       <!-- Team Member 4 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="images/marketing-manager.png" alt="Marketing Manager" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="images/marketing-manager.webp" type="image/webp">
+          <img src="images/marketing-manager.png" alt="Marketing Manager" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">John Doe</h3>
         <p class="text-blue-500 font-semibold mb-2">Marketing Manager</p>
         <p class="text-gray-600 text-center text-sm">Expert in digital marketing and client relations, ensuring our properties reach the right audience and our clients are always informed.</p>
       </div>
       <!-- Team Member 5 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="https://randomuser.me/api/portraits/men/13.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="https://randomuser.me/api/portraits/men/13.jpg.webp" type="image/webp">
+          <img src="https://randomuser.me/api/portraits/men/13.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Samuel Okoro</h3>
         <p class="text-blue-500 font-semibold mb-2">Property Consultant</p>
         <p class="text-gray-600 text-center text-sm">Specialist in property acquisition and investment, helping clients make informed decisions for their future.</p>
       </div>
       <!-- Team Member 6 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="https://randomuser.me/api/portraits/women/14.jpg.webp" type="image/webp">
+          <img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Aisha Bello</h3>
         <p class="text-blue-500 font-semibold mb-2">Legal Advisor</p>
         <p class="text-gray-600 text-center text-sm">Ensures all transactions are secure and compliant, providing peace of mind for our clients and partners.</p>
       </div>
       <!-- Team Member 7 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="https://randomuser.me/api/portraits/men/15.jpg.webp" type="image/webp">
+          <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Emeka Nwosu</h3>
         <p class="text-blue-500 font-semibold mb-2">Operations Manager</p>
         <p class="text-gray-600 text-center text-sm">Oversees daily operations and ensures our services run smoothly for every client and partner.</p>
       </div>
       <!-- Team Member 8 -->
       <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col items-center hover:scale-105 transition-transform border-t-4 border-blue-400">
-        <img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg">
+        <picture>
+          <source srcset="https://randomuser.me/api/portraits/women/16.jpg.webp" type="image/webp">
+          <img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Team Member" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 shadow-lg" loading="lazy">
+        </picture>
         <h3 class="text-xl font-bold text-blue-700">Grace Uche</h3>
         <p class="text-blue-500 font-semibold mb-2">Client Relations</p>
         <p class="text-gray-600 text-center text-sm">Dedicated to providing excellent support and building lasting relationships with our clients.</p>

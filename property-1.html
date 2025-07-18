@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Property 1 | Fountain Stars Properties Limited</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="main.js"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <script defer src="main.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
   <header id="navbar"></header>
   <main class="max-w-3xl mx-auto py-16 px-4">
     <div class="mb-8">
-      <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Property 1" class="w-full h-80 object-cover rounded-lg shadow">
+      <picture>
+        <source srcset="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" type="image/webp">
+        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Property 1" class="w-full h-80 object-cover rounded-lg shadow" loading="lazy">
+      </picture>
     </div>
     <h1 class="text-3xl font-bold mb-4">Luxury Family Home</h1>
     <p class="text-lg mb-6">This stunning family home offers spacious living areas, modern amenities, and a beautiful garden. Located in a serene neighborhood, it's perfect for families seeking comfort and style.</p>

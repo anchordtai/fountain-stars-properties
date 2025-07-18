@@ -264,7 +264,10 @@ function renderPropertiesGrid(filteredData) {
         ${filteredData.map((p, i) => `
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100 cursor-pointer" data-property-index="${i}">
             <div class="relative">
-              <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+              <picture>
+                <source srcset="${p.img.replace(/\.(jpg|jpeg|png)$/, '.webp')}" type="image/webp">
+                <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+              </picture>
               <span class="absolute top-3 left-3 text-3xl">${p.icon}</span>
             </div>
             <div class="p-4">
@@ -364,21 +367,30 @@ const projectsHTML = `
   <h2 class="text-3xl font-bold text-center mb-10">Our Projects</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
+      <picture>
+        <source srcset="images/propert6.jpeg.webp" type="image/webp">
+        <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
+      </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">Luxury Estate</h3>
         <p class="text-gray-600">A premium residential estate with modern amenities and beautiful landscaping.</p>
       </div>
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
+      <picture>
+        <source srcset="images/property7.jpeg.webp" type="image/webp">
+        <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
+      </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">City Apartments</h3>
         <p class="text-gray-600">Modern apartments in the heart of the city, designed for comfort and convenience.</p>
       </div>
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
+      <picture>
+        <source srcset="images/propert8.jpeg.webp" type="image/webp">
+        <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
+      </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">Investment Villas</h3>
         <p class="text-gray-600">A collection of high-yield investment villas in a fast-growing neighborhood.</p>
@@ -483,7 +495,10 @@ function renderPropertiesPage() {
     card.setAttribute('data-property-index', i);
     card.innerHTML = `
       <div class="relative">
-        <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+        <picture>
+          <source srcset="${p.img.replace(/\.(jpg|jpeg|png)$/, '.webp')}" type="image/webp">
+          <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+        </picture>
         <span class="absolute top-3 left-3 text-3xl">${p.icon}</span>
       </div>
       <div class="p-4">
@@ -592,12 +607,22 @@ function openPropertyModal(property) {
     carousel = `
       <div class="relative mb-4">
         <div class="flex overflow-x-auto gap-2 snap-x">
-          ${property.images.map(img => `<img src="${img}" class="h-48 w-full object-cover rounded-xl snap-center shadow" alt="${property.title}">`).join('')}
+          ${property.images.map(img => `
+            <picture>
+              <source srcset="${img.replace(/\.(jpg|jpeg|png)$/, '.webp')}" type="image/webp">
+              <img src="${img}" class="h-48 w-full object-cover rounded-xl snap-center shadow" alt="${property.title}" loading="lazy">
+            </picture>
+          `).join('')}
         </div>
       </div>
     `;
   } else {
-    carousel = `<img src="${property.img}" class="h-48 w-full object-cover rounded-xl mb-4 shadow" alt="${property.title}">`;
+    carousel = `
+      <picture>
+        <source srcset="${property.img.replace(/\.(jpg|jpeg|png)$/, '.webp')}" type="image/webp">
+        <img src="${property.img}" class="h-48 w-full object-cover rounded-xl mb-4 shadow" alt="${property.title}" loading="lazy">
+      </picture>
+    `;
   }
   // Features list
   const features = property.features ? `<ul class="flex flex-wrap gap-2 mb-4">${property.features.map(f => `<li class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">${f}</li>`).join('')}</ul>` : '';
@@ -794,7 +819,10 @@ window.addEventListener('DOMContentLoaded', () => {
         card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform group border border-blue-100';
         card.innerHTML = `
           <div class="relative">
-            <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+            <picture>
+              <source srcset="${p.img.replace(/\.(jpg|jpeg|png)$/, '.webp')}" type="image/webp">
+              <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+            </picture>
             <span class="absolute top-3 left-3 text-3xl">${p.icon}</span>
           </div>
           <div class="p-4">
