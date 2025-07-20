@@ -1,6 +1,23 @@
 const modernButtonClass = "inline-block bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-2 rounded-full shadow-lg font-semibold transition-transform duration-200 hover:scale-105 hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2";
 // Navbar HTML with logo and full company name
-const navbarHTML = `
+function getNavbarLinks() {
+  const path = window.location.pathname;
+  const links = [
+    { href: 'index.html', label: 'Home' },
+    { href: 'about.html', label: 'About' },
+    { href: 'properties.html', label: 'Properties' },
+    { href: 'team.html', label: 'Team' },
+    { href: 'contact.html', label: 'Contact' },
+  ];
+  // On landing page, show all links
+  if (path.endsWith('index.html') || path === '/' || path === '') return links;
+  // Remove the link for the current page
+  return links.filter(link => !path.endsWith(link.href));
+}
+
+function renderNavbarHTML() {
+  const links = getNavbarLinks();
+  return `
 <nav class="backdrop-blur bg-white/80 bg-gradient-to-r from-blue-50 via-white to-blue-100 shadow-lg border-b border-blue-100 sticky top-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
@@ -11,11 +28,7 @@ const navbarHTML = `
           <span class="text-sm md:text-base font-semibold text-blue-400 italic -mt-1">Properties Limited</span>
         </a>
         <div class="hidden md:ml-6 md:flex md:space-x-8 items-center w-full justify-end">
-          <a href="index.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-800 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
-          <a href="about.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
-          <a href="properties.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
-          <a href="team.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
-          <a href="contact.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
+          ${links.map(link => `<a href="${link.href}" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">${link.label}</a>`).join('')}
           <form id="navbar-search-form" class="ml-6 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-64 max-w-xs focus-within:ring-2 focus-within:ring-blue-400 transition">
             <input id="navbar-search" type="text" placeholder="Search properties..." class="flex-1 px-3 py-1 bg-transparent outline-none text-sm text-blue-900" />
             <button type="submit" class="text-blue-500 hover:text-blue-700 p-1">
@@ -35,11 +48,7 @@ const navbarHTML = `
   </div>
   <div id="mobile-menu" class="md:hidden hidden bg-white/95 shadow-lg border-t border-blue-100 mt-2 rounded-b-xl transition-all duration-300">
     <div class="pt-2 pb-3 space-y-1 px-4">
-      <a href="index.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-800 bg-blue-50 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
-      <a href="about.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
-      <a href="properties.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
-      <a href="team.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
-      <a href="contact.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
+      ${links.map(link => `<a href="${link.href}" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">${link.label}</a>`).join('')}
       <form id="navbar-search-form-mobile" class="mt-4 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-full focus-within:ring-2 focus-within:ring-blue-400 transition">
         <input id="navbar-search-mobile" type="text" placeholder="Search properties..." class="flex-1 px-3 py-1 bg-transparent outline-none text-sm text-blue-900" />
         <button type="submit" class="text-blue-500 hover:text-blue-700 p-1">
@@ -50,6 +59,7 @@ const navbarHTML = `
   </div>
 </nav>
 `;
+}
 
 // Modern, visually appealing hero section with real property images in the carousel
 const heroHTML = `
@@ -708,7 +718,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const navbar = document.getElementById('navbar');
-  if (navbar) navbar.innerHTML = navbarHTML;
+  if (navbar) navbar.innerHTML = renderNavbarHTML();
 
   // Attach mobile menu event listener after navbar is injected
   const menuBtn = document.getElementById('mobile-menu-btn');
