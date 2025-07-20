@@ -381,7 +381,7 @@ const projectsHTML = `
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="${getWebpPath('images/propert6.webp')}" type="image/webp">
+        <source srcset="${getWebpPath('images/propert6.jpeg')}" type="image/webp">
         <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -391,7 +391,7 @@ const projectsHTML = `
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="${getWebpPath('images/property7.webp')}" type="image/webp">
+        <source srcset="${getWebpPath('images/property7.jpeg')}" type="image/webp">
         <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -401,7 +401,7 @@ const projectsHTML = `
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="${getWebpPath('images/propert8.webp')}" type="image/webp">
+        <source srcset="${getWebpPath('images/propert8.jpeg')}" type="image/webp">
         <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -972,7 +972,6 @@ if (typeof tailwind !== 'undefined') {
 // Utility to get correct webp path
 function getWebpPath(img) {
   if (!img) return '';
-  // Remove .jpeg/.jpg/.png and add .webp
-  const base = img.replace(/\.(jpeg|jpg|png)$/i, '');
-  return base + '.webp';
+  if (img.endsWith('.webp')) return img;
+  return img.replace(/\.(jpeg|jpg|png)$/i, '.webp');
 } 
