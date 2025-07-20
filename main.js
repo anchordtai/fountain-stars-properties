@@ -13,7 +13,7 @@ const navbarHTML = `
         <div class="hidden md:ml-6 md:flex md:space-x-8 items-center w-full justify-end">
           <a href="index.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-800 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
           <a href="about.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
-          <a href="#properties" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
+          <a href="properties.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
           <a href="team.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
           <a href="contact.html" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
           <form id="navbar-search-form" class="ml-6 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-64 max-w-xs focus-within:ring-2 focus-within:ring-blue-400 transition">
@@ -37,7 +37,7 @@ const navbarHTML = `
     <div class="pt-2 pb-3 space-y-1 px-4">
       <a href="index.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-800 bg-blue-50 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Home</a>
       <a href="about.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">About</a>
-      <a href="#properties" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
+      <a href="properties.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Properties</a>
       <a href="team.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Team</a>
       <a href="contact.html" class="block px-4 py-2 rounded-full text-base font-medium text-blue-700 hover:bg-blue-100 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">Contact</a>
       <form id="navbar-search-form-mobile" class="mt-4 flex items-center bg-white rounded-full shadow border border-blue-100 px-2 py-1 w-full focus-within:ring-2 focus-within:ring-blue-400 transition">
@@ -72,7 +72,7 @@ const heroHTML = `
   <div class="relative z-10 max-w-2xl mx-auto text-center text-white px-6 py-12">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">Find Your Dream Home</h1>
     <p class="text-lg md:text-xl mb-6 font-medium drop-shadow">Discover luxury properties, modern apartments, and investment opportunities with Fountain Stars Properties Limited.</p>
-    <a href="properties.html" class="${modernButtonClass} animate-bounce">Browse Properties</a>
+    <a href="properties.html" class="inline-block bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-2 rounded-full shadow-lg font-semibold transition-transform duration-200 hover:scale-105 hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Browse Properties</a>
   </div>
 </div>
 `;
@@ -108,7 +108,7 @@ const footerHTML = `
   <div>
     <h3 class="text-xl font-bold mb-2">Fountain Stars Properties Ltd</h3>
     <p>Hse 1 block 1 Salis Aviation Estate. Opp Aero garden estate. kuje bridge Abuja.</p>
-    <p>Email: info@fountainstars.com</p>
+    <p>Email: info@fountainstarsproperties.com.ng</p>
     <p>Phone: +2347010488715, +2348101208087, +2348069030714</p>
   </div>
   <div>
@@ -116,17 +116,30 @@ const footerHTML = `
     <ul>
       <li><a href="index.html" class="hover:underline">Home</a></li>
       <li><a href="about.html" class="hover:underline">About</a></li>
-      <li><a href="#properties" class="hover:underline">Properties</a></li>
-      <li><a href="#team" class="hover:underline">Team</a></li>
+      <li><a href="properties.html" class="hover:underline">Properties</a></li>
+      <li><a href="team.html" class="hover:underline">Team</a></li>
       <li><a href="contact.html" class="hover:underline">Contact</a></li>
     </ul>
   </div>
-  <div>
-    <h4 class="font-semibold mb-2">Follow Us</h4>
-    <div class="flex space-x-4">
-      <a href="#" class="hover:text-blue-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.56v14.91A4.56 4.56 0 0 1 19.44 24H4.56A4.56 4.56 0 0 1 0 19.47V4.56A4.56 4.56 0 0 1 4.56 0h14.91A4.56 4.56 0 0 1 24 4.56zM8.09 19.47V9.5H5.08v9.97zm-1.5-11.3a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48zm13.41 11.3h-3.01v-4.85c0-1.16-.02-2.65-1.62-2.65-1.62 0-1.87 1.26-1.87 2.56v4.94h-3.01V9.5h2.89v1.36h.04a3.17 3.17 0 0 1 2.85-1.57c3.05 0 3.61 2.01 3.61 4.62v5.56z"/></svg></a>
-      <a href="#" class="hover:text-blue-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.72 0-4.924 2.204-4.924 4.924 0 .386.044.763.127 1.124C7.691 8.095 4.066 6.13 1.64 3.161c-.423.722-.666 1.561-.666 2.475 0 1.708.87 3.216 2.188 4.099-.807-.026-1.566-.247-2.228-.616v.062c0 2.385 1.693 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.317 0-.626-.03-.928-.086.627 1.956 2.444 3.377 4.6 3.417-1.68 1.318-3.809 2.104-6.102 2.104-.397 0-.788-.023-1.175-.069 2.179 1.397 4.768 2.213 7.557 2.213 9.054 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-      <a href="#" class="hover:text-blue-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.612.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-7.612 0-5.923-.013-6.332-.072-7.612-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0z"/></svg></a>
+  <div class="md:col-span-2 flex flex-col items-center md:items-start">
+    <h4 class="font-semibold mb-2">Connect With Us</h4>
+    <div class="flex space-x-8 mt-4 justify-center w-full">
+      <a href="https://wa.me/2347010488715" target="_blank" rel="noopener" aria-label="WhatsApp" class="group relative rounded-full bg-green-500 hover:bg-green-600 p-3 shadow-lg transition-transform hover:scale-110">
+        <span class="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-green-600 text-white text-xs rounded px-2 py-1 shadow-lg transition-transform duration-200 z-10 whitespace-nowrap">WhatsApp</span>
+        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A12 12 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.19-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.68.96.98-3.59-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.34-.26.27-1 1-.98 2.43.02 1.43 1.03 2.81 1.18 3.01.15.2 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.62.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61578557281815&mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook" class="group relative rounded-full bg-blue-600 hover:bg-blue-700 p-3 shadow-lg transition-transform hover:scale-110">
+        <span class="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-blue-700 text-white text-xs rounded px-2 py-1 shadow-lg transition-transform duration-200 z-10 whitespace-nowrap">Facebook</span>
+        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+      </a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="group relative rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600 p-3 shadow-lg transition-transform hover:scale-110">
+        <span class="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-pink-600 text-white text-xs rounded px-2 py-1 shadow-lg transition-transform duration-200 z-10 whitespace-nowrap">Instagram</span>
+        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.612.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-7.612 0-5.923-.013-6.332-.072-7.612-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0z"/><circle cx="12" cy="12" r="3.5"/></svg>
+      </a>
+      <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="group relative rounded-full bg-black hover:bg-gray-900 p-3 shadow-lg transition-transform hover:scale-110">
+        <span class="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-gray-900 text-white text-xs rounded px-2 py-1 shadow-lg transition-transform duration-200 z-10 whitespace-nowrap">TikTok</span>
+        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.75 2v12.25a2.75 2.75 0 1 1-2.75-2.75h1.5a1.25 1.25 0 1 0 1.25 1.25V2h2.25a5.75 5.75 0 0 0 5.75 5.75v2.25A8 8 0 0 1 12.75 2z"/></svg>
+      </a>
     </div>
   </div>
   <div>
@@ -135,11 +148,11 @@ const footerHTML = `
       <input type="text" placeholder="Name" class="rounded px-2 py-1 text-gray-900">
       <input type="email" placeholder="Email" class="rounded px-2 py-1 text-gray-900">
       <textarea placeholder="Message" class="rounded px-2 py-1 text-gray-900"></textarea>
-      <button type="submit" class="${modernButtonClass}">Send</button>
+      <button type="submit" class="bg-blue-600 text-white rounded px-4 py-2 font-semibold mt-2 hover:bg-blue-700 transition">Send</button>
     </form>
   </div>
 </div>
-<div class="text-center py-4 border-t border-gray-700 mt-8">&copy; 2024 Fountain Stars Properties Limited. All rights reserved.</div>
+<div class="text-center py-4 border-t border-gray-700 mt-8">&copy; 2025 Fountain Stars Properties Limited. All rights reserved.</div>
 
 <!-- Map Placeholder -->
 <div class="w-full h-64 mt-6 rounded-lg overflow-hidden shadow-lg">
@@ -192,8 +205,8 @@ const propertyData = [
     features: ['1000 Sq Ft', 'Fully Furnished', 'High Ceilings', 'Conference Room', 'Parking']
   },
   {
-    img: '',
-    images: ['', '', ''],
+    img: 'images/property2.jpeg',
+    images: ['images/property2.jpeg', 'images/property3.jpeg', 'images/property4.jpeg'],
     icon: '🏘️',
     title: 'Gated Community House',
     desc: 'Secure and peaceful living in a friendly gated community.',
@@ -341,19 +354,19 @@ const testimonialsHTML = `
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
       <svg class="w-10 h-10 text-blue-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-2a4 4 0 0 1 4-4h1V7a4 4 0 0 0-8 0v2"/></svg>
-      <p class="text-gray-700 italic mb-4">“Fountain Stars Properties made buying our dream home a breeze. Professional, friendly, and reliable!”</p>
+      <p class="text-gray-700 italic mb-4">"Fountain Stars Properties made buying our dream home a breeze. Professional, friendly, and reliable!"</p>
       <span class="font-semibold text-blue-700">John Doe</span>
       <span class="text-sm text-gray-500">Homeowner</span>
     </div>
     <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
       <svg class="w-10 h-10 text-blue-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-2a4 4 0 0 1 4-4h1V7a4 4 0 0 0-8 0v2"/></svg>
-      <p class="text-gray-700 italic mb-4">“Excellent service and great value. I highly recommend Fountain Stars for all your real estate needs.”</p>
+      <p class="text-gray-700 italic mb-4">"Excellent service and great value. I highly recommend Fountain Stars for all your real estate needs."</p>
       <span class="font-semibold text-blue-700">Jane Smith</span>
       <span class="text-sm text-gray-500">Investor</span>
     </div>
     <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
       <svg class="w-10 h-10 text-blue-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-2a4 4 0 0 1 4-4h1V7a4 4 0 0 0-8 0v2"/></svg>
-      <p class="text-gray-700 italic mb-4">“Their team is knowledgeable and always available. The process was smooth from start to finish.”</p>
+      <p class="text-gray-700 italic mb-4">"Their team is knowledgeable and always available. The process was smooth from start to finish."</p>
       <span class="font-semibold text-blue-700">Ahmed Musa</span>
       <span class="text-sm text-gray-500">Landlord</span>
     </div>
@@ -368,7 +381,7 @@ const projectsHTML = `
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="images/propert6.jpeg.webp" type="image/webp">
+        <source srcset="${getWebpPath('images/propert6.webp')}" type="image/webp">
         <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -378,7 +391,7 @@ const projectsHTML = `
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="images/property7.jpeg.webp" type="image/webp">
+        <source srcset="${getWebpPath('images/property7.webp')}" type="image/webp">
         <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -388,7 +401,7 @@ const projectsHTML = `
     </div>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
-        <source srcset="images/propert8.jpeg.webp" type="image/webp">
+        <source srcset="${getWebpPath('images/propert8.webp')}" type="image/webp">
         <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
@@ -409,19 +422,19 @@ const newsMediaHTML = `
       <span class="text-xs text-blue-600 mb-2">July 2024</span>
       <h3 class="text-lg font-semibold mb-2">Fountain Stars Launches New Estate</h3>
       <p class="text-gray-600 mb-4">We are excited to announce the launch of our latest residential estate in Abuja, offering luxury and comfort for families.</p>
-      <a href="#" class="text-blue-600 hover:underline mt-auto">Read More</a>
+      <a href="news-media.html" class="text-blue-600 hover:underline mt-auto">Read More</a>
     </div>
     <div class="bg-white rounded-lg shadow p-6 flex flex-col">
       <span class="text-xs text-blue-600 mb-2">June 2024</span>
       <h3 class="text-lg font-semibold mb-2">Awarded Best Real Estate Company</h3>
       <p class="text-gray-600 mb-4">Fountain Stars Properties Limited has been recognized as the best real estate company in the region for 2024.</p>
-      <a href="#" class="text-blue-600 hover:underline mt-auto">Read More</a>
+      <a href="news-media.html" class="text-blue-600 hover:underline mt-auto">Read More</a>
     </div>
     <div class="bg-white rounded-lg shadow p-6 flex flex-col">
       <span class="text-xs text-blue-600 mb-2">May 2024</span>
       <h3 class="text-lg font-semibold mb-2">Community Outreach Program</h3>
       <p class="text-gray-600 mb-4">Our team recently completed a successful community outreach, supporting local families and schools.</p>
-      <a href="#" class="text-blue-600 hover:underline mt-auto">Read More</a>
+      <a href="news-media.html" class="text-blue-600 hover:underline mt-auto">Read More</a>
     </div>
   </div>
 </div>
@@ -519,7 +532,7 @@ function renderPropertiesPage() {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const idx = parseInt(btn.getAttribute('data-property-index'));
-        openPropertyModal(propertyData[idx]);
+        openPropertyModal(filteredData[idx]);
       });
     });
   }, 0);
@@ -631,7 +644,7 @@ function openPropertyModal(property) {
   // Social media icons
   const socials = `
     <div class="flex gap-4 mt-4 justify-center">
-      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-blue-600 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0z"/></svg></a>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-blue-600 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0z"/></svg></a>
       <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-pink-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.425 3.678 1.406c-.98.98-1.274 2.092-1.334 3.374C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.612.06 1.282.354 2.394 1.334 3.374.98.98 2.092 1.274 3.374 1.334C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.06 2.394-.354 3.374-1.334.98-.98 1.274-2.092 1.334-3.374.059-1.28.072-1.689.072-7.612 0-5.923-.013-6.332-.072-7.612-.06-1.282-.354-2.394-1.334-3.374-.98-.98-2.092-1.274-3.374-1.334C15.668.013 15.259 0 12 0z"/></svg></a>
       <a href="https://wa.me/2347010488715" target="_blank" aria-label="WhatsApp" class="hover:text-green-500 text-gray-400 text-2xl transition"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.519-5.688-1.515L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.651-1.033-5.138-2.909-7.016C16.148 3.9 13.661 2.867 11.01 2.868c-5.448 0-9.886 4.434-9.889 9.884-.001 1.885.502 3.733 1.463 5.354l-.982 3.587 3.052-.999zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
     </div>
@@ -954,4 +967,12 @@ if (typeof tailwind !== 'undefined') {
       },
     },
   };
+}
+
+// Utility to get correct webp path
+function getWebpPath(img) {
+  if (!img) return '';
+  // Remove .jpeg/.jpg/.png and add .webp
+  const base = img.replace(/\.(jpeg|jpg|png)$/i, '');
+  return base + '.webp';
 } 
