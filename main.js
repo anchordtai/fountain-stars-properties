@@ -334,15 +334,11 @@ const teamHTML = `
       <p class="text-blue-600">Head of Engineering Dept.</p>
     </div>
     <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
-      <img src="images/eze.jpg" alt="Engr Sunny Eze" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
-      <h4 class="font-semibold text-lg text-center">Engr Sunny Eze</h4>
-      <p class="text-blue-600">Procurement and site manager</p>
-    </div>
-    <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
       <img src="images/marketing-manager.png" alt="Marketing Manager" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
       <h4 class="font-semibold text-lg">Marketing Manager</h4>
       <p class="text-blue-600">Marketing Manager</p>
     </div>
+    ${/* Commented out uncustomized team members 3-6
     ${[3,4,5,6].map(i => `
       <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:shadow-xl transition">
         <img src="https://randomuser.me/api/portraits/men/${i+10}.jpg" alt="Team Member ${i}" class="w-24 h-24 rounded-full mb-3 object-cover border-4 border-blue-200">
@@ -350,6 +346,7 @@ const teamHTML = `
         <p class="text-blue-600">Role ${i}</p>
       </div>
     `).join('')}
+    */''}
   </div>
   <div class="text-center mt-8">
     <a href="properties.html" class="${modernButtonClass}">View All Properties</a>
@@ -392,7 +389,7 @@ const projectsHTML = `
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
         <source srcset="${getWebpPath('images/propert6.jpeg')}" type="image/webp">
-        <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
+      <img src="images/propert6.jpeg" alt="Project 1" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">Luxury Estate</h3>
@@ -402,7 +399,7 @@ const projectsHTML = `
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
         <source srcset="${getWebpPath('images/property7.jpeg')}" type="image/webp">
-        <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
+      <img src="images/property7.jpeg" alt="Project 2" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">City Apartments</h3>
@@ -412,7 +409,7 @@ const projectsHTML = `
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <picture>
         <source srcset="${getWebpPath('images/propert8.jpeg')}" type="image/webp">
-        <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
+      <img src="images/propert8.jpeg" alt="Project 3" class="w-full h-48 object-cover">
       </picture>
       <div class="p-4">
         <h3 class="text-xl font-semibold mb-2">Investment Villas</h3>
